@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci6trals241rx"]
+[gd_scene load_steps=9 format=3 uid="uid://ci6trals241rx"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bc8x443e0wrew" path="res://scenes/floor.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://clxiph1oslvn0" path="res://scenes/skeleton_mage.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cpquie5kyyc4w" path="res://scenes/wall.tscn" id="4_jyhfs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -108,11 +109,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
 [node name="floor25" parent="floors" instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
 
-[node name="skeleton_mage" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
-
-[node name="skeleton_mage2" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-
 [node name="ProtoController" parent="." instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 8)
+
+[node name="wall" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -9.41319)
+
+[node name="skeleton_mage" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18238, 0.0542257, -6.53715)
+
+[node name="skeleton_mage2" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.38356, 0.0542257, -6.5359)

@@ -56,6 +56,7 @@ var freeflying : bool = false
 @onready var blaster_barrel = $"Head/Camera3D/blaster-e3/RayCast3D"
 
 var bullet = load("res://scenes/bullet.tscn")
+var instance
 
 
 func _ready() -> void:
@@ -94,6 +95,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("shoot"):
 		if !blaster_anim.is_playing():
 			blaster_anim.play("shoot")
+			instance = bullet.instantiate()
+			instance.position = blaster_barrel.global_position
+			instance.transform.basis = blaster_barrel.global_transform.basis
+			get_parent().add_child(instance)
 			
 	# Apply gravity to velocity
 	if has_gravity:
