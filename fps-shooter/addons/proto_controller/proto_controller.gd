@@ -52,6 +52,11 @@ var freeflying : bool = false
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
+@onready var blaster_anim = $"Head/Camera3D/blaster-e3/AnimationPlayer"
+@onready var blaster_barrel = $"Head/Camera3D/blaster-e3/RayCast3D"
+
+var bullet = load("res://scenes/bullet.tscn")
+
 
 func _ready() -> void:
 	check_input_mappings()
@@ -85,6 +90,11 @@ func _physics_process(delta: float) -> void:
 		move_and_collide(motion)
 		return
 	
+	# Shooting
+	if Input.is_action_pressed("shoot"):
+		if !blaster_anim.is_playing():
+			blaster_anim.play("shoot")
+			
 	# Apply gravity to velocity
 	if has_gravity:
 		if not is_on_floor():

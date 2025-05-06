@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci6trals241rx"]
+[gd_scene load_steps=8 format=3 uid="uid://ci6trals241rx"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bc8x443e0wrew" path="res://scenes/floor.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://clxiph1oslvn0" path="res://scenes/skeleton_mage.tscn" id="3_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -21,7 +22,7 @@ glow_enabled = true
 [node name="main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.5, -0.75, 0.433013, 3.67569e-08, 0.5, 0.866025, 0, 9, 13)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -30,8 +31,6 @@ environment = SubResource("Environment_h2yge")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("PlaneMesh_0xm2m")
-
-[node name="ProtoController" parent="." instance=ExtResource("1_0wfyh")]
 
 [node name="floors" type="Node" parent="."]
 
@@ -108,3 +107,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
 
 [node name="floor25" parent="floors" instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
+
+[node name="skeleton_mage" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
+
+[node name="skeleton_mage2" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="ProtoController" parent="." instance=ExtResource("1_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 8)
