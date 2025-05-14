@@ -55,7 +55,7 @@ var freeflying : bool = false
 @onready var blaster_anim = $"Head/Camera3D/blaster-e3/AnimationPlayer"
 @onready var blaster_barrel = $"Head/Camera3D/blaster-e3/RayCast3D"
 
-var bullet = load("res://scenes/bullet.tscn")
+var bullet = load("uid://b1pls15w0hc2a")
 var instance
 
 
