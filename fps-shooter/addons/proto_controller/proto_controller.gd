@@ -52,8 +52,10 @@ var freeflying : bool = false
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
-@onready var blaster_anim = $"Head/Camera3D/blaster-e3/AnimationPlayer"
-@onready var blaster_barrel = $"Head/Camera3D/blaster-e3/RayCast3D"
+
+@onready var wand_tip = $Head/Camera3D/wand2/RayCast3D
+@onready var wand_anim = $Head/Camera3D/wand2/AnimationPlayer
+
 
 var bullet = load("uid://b1pls15w0hc2a")
 var instance
@@ -93,12 +95,19 @@ func _physics_process(delta: float) -> void:
 	
 	# Shooting
 	if Input.is_action_pressed("shoot"):
-		if !blaster_anim.is_playing():
-			blaster_anim.play("shoot")
+		if !wand_anim.is_playing():
+			wand_anim.play("shoot")
+		
 			instance = bullet.instantiate()
-			instance.position = blaster_barrel.global_position
-			instance.transform.basis = blaster_barrel.global_transform.basis
+			instance.position = wand_tip.global_position
+			instance.transform.basis = wand_tip.global_transform.basis
 			get_parent().add_child(instance)
+		#if !blaster_anim.is_playing():
+			#blaster_anim.play("shoot")
+			#instance = bullet.instantiate()
+			#instance.position = blaster_barrel.global_position
+			#instance.transform.basis = blaster_barrel.global_transform.basis
+			#get_parent().add_child(instance)
 			
 	# Apply gravity to velocity
 	if has_gravity:

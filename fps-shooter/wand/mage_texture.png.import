@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gw7e7d4jpc4h"
-path.s3tc="res://.godot/imported/colormap.png-b06ced58d79965e52ccbae55c91344ec.s3tc.ctex"
+uid="uid://kef78urdt43w"
+path.s3tc="res://.godot/imported/mage_texture.png-77f9c28f18f35608f20efbefead6a498.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://blaster/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-b06ced58d79965e52ccbae55c91344ec.s3tc.ctex"]
+source_file="res://wand/mage_texture.png"
+dest_files=["res://.godot/imported/mage_texture.png-77f9c28f18f35608f20efbefead6a498.s3tc.ctex"]
 
 [params]
 
